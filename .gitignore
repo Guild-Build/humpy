@@ -1,0 +1,15 @@
+# Local output, credentials and test scratch; never publish these.
+__pycache__/
+.check-*/
+*.log
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+/labsetup/logs/
+/labsetup/reports/
+/labsetup/runtime/
+.venv/
+**/.codex/auth.json
+**/.claude/settings.local.json

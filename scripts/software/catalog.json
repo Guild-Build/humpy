@@ -1,0 +1,198 @@
+{
+  "format": 1,
+  "platform": "Windows x64",
+  "note": "Download only. Pinned versions and verification metadata are retained; availability has not been rechecked. HTTPS-only entries are not publisher-verified.",
+  "packages": [
+    {
+      "id": "git",
+      "name": "Git for Windows",
+      "command": "Download-Git.cmd",
+      "version": "2.56.0.windows.4",
+      "files": [
+        {
+          "filename": "Git-2.56.0.4-64-bit.exe",
+          "url": "https://github.com/git-for-windows/git/releases/download/v2.56.0.windows.4/Git-2.56.0.4-64-bit.exe",
+          "sha256": "4961a4a8cc778d8b6e00a5819e5fe4d078b754555aff7aedc2d77a5d74c2de80"
+        }
+      ],
+      "sources": [
+        "https://github.com/git-for-windows/git/releases/tag/v2.56.0.windows.4"
+      ]
+    },
+    {
+      "id": "python",
+      "name": "Python 3.12",
+      "command": "Download-Python.cmd",
+      "version": "3.12.10",
+      "files": [
+        {
+          "filename": "python-3.12.10-amd64.exe",
+          "url": "https://www.python.org/ftp/python/3.12.10/python-3.12.10-amd64.exe",
+          "sha256": "67b5635e80ea51072b87941312d00ec8927c4db9ba18938f7ad2d27b328b95fb",
+          "signer_pattern": "(?:^|,\\s*)(?:CN|O)=Python Software Foundation(?:,|$)"
+        }
+      ],
+      "sources": [
+        "https://www.python.org/ftp/python/3.12.10/python-3.12.10-amd64.exe.sigstore"
+      ]
+    },
+    {
+      "id": "node",
+      "name": "Node.js with npm",
+      "command": "Download-Node.cmd",
+      "version": "26.13.0",
+      "files": [
+        {
+          "filename": "node-v26.13.0-x64.msi",
+          "url": "https://nodejs.org/dist/v26.13.0/node-v26.13.0-x64.msi",
+          "sha256": "0e5ee99c7cbf922887f04af268e3665990748945336a44956f47cc0df695b6df"
+        }
+      ],
+      "sources": [
+        "https://nodejs.org/dist/v26.13.0/SHASUMS256.txt"
+      ]
+    },
+    {
+      "id": "codex",
+      "name": "Codex CLI",
+      "command": "Download-CodexCLI.cmd",
+      "version": "0.167.0",
+      "files": [
+        {
+          "filename": "codex-0.167.0.tgz",
+          "url": "https://registry.npmjs.org/@openai/codex/-/codex-0.167.0.tgz",
+          "integrity": "sha512-1FSQgbTIKAdTub5Ln6z36NT4eXDmBRkinfigzycbgn9yLZdJ3UdkQZqr0N7jnl8/D1xxT/Pz3Fl2l7S2dmRaFA=="
+        },
+        {
+          "filename": "codex-0.167.0-win32-x64.tgz",
+          "url": "https://registry.npmjs.org/@openai/codex/-/codex-0.167.0-win32-x64.tgz",
+          "integrity": "sha512-duPCBwflc8qhQdLekbL8fDYF646tW4gj0/l9BDnsVhEzoqm6OwxMAJXDFwSOLUUJPCmjBeM+eHYAx4fP/hwfjg=="
+        }
+      ],
+      "sources": [
+        "https://registry.npmjs.org/@openai/codex/0.167.0"
+      ]
+    },
+    {
+      "id": "claude",
+      "name": "Claude Code CLI",
+      "command": "Download-ClaudeCode.cmd",
+      "version": "2.1.319",
+      "files": [
+        {
+          "filename": "claude-2.1.319-win32-x64.exe",
+          "url": "https://downloads.claude.ai/claude-code-releases/2.1.319/win32-x64/claude.exe",
+          "sha256": "2e055732c9d03d22700d9046251a8370b673607bfcc9e4d16a1b0e8fb1345cbd",
+          "signer_pattern": "(?:^|,\\s*)(?:CN|O)=\"?Anthropic, PBC\"?(?:,|$)"
+        }
+      ],
+      "sources": [
+        "https://downloads.claude.ai/claude-code-releases/2.1.319/manifest.json"
+      ]
+    },
+    {
+      "id": "chrome",
+      "name": "Google Chrome",
+      "command": "Download-Chrome.cmd",
+      "version": "current-stable",
+      "files": [
+        {
+          "filename": "googlechromestandaloneenterprise64.msi",
+          "url": "https://dl.google.com/dl/chrome/install/googlechromestandaloneenterprise64.msi",
+          "signer_pattern": "(?:^|,\\s*)(?:CN|O)=Google (?:LLC|Inc\\.?)(?:,|$)"
+        }
+      ],
+      "sources": [
+        "https://chromeenterprise.google/download/",
+        "https://chromeenterprise.google/static/js/1882.min.js"
+      ]
+    },
+    {
+      "id": "vscode",
+      "name": "Visual Studio Code",
+      "command": "Download-VSCode.cmd",
+      "version": "1.145.2",
+      "files": [
+        {
+          "filename": "VSCodeSetup-x64-1.145.2.exe",
+          "url": "https://vscode.download.prss.microsoft.com/dbazure/download/stable/c4453f8ea430795f941c1b2ff6c9321135a74a02/VSCodeSetup-x64-1.145.2.exe",
+          "sha256": "c5f66401b1f55092fcbde213bf79126b1085d9af5bfeae6b0a04beb81b6a4270"
+        }
+      ],
+      "sources": [
+        "https://update.code.visualstudio.com/api/update/win32-x64/stable/latest"
+      ]
+    },
+    {
+      "id": "notepadpp",
+      "name": "Notepad++",
+      "command": "Download-NotepadPlusPlus.cmd",
+      "version": "8.9.9",
+      "files": [
+        {
+          "filename": "npp.8.9.9.Installer.x64.exe",
+          "url": "https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.9.9/npp.8.9.9.Installer.x64.exe",
+          "sha256": "a18cfb33d616c8eecda0059604d40bdb9d607fbc4ede857c8be6e41986464367"
+        }
+      ],
+      "sources": [
+        "https://api.github.com/repos/notepad-plus-plus/notepad-plus-plus/releases/latest"
+      ]
+    },
+    {
+      "id": "codex_desktop",
+      "name": "Codex Desktop / ChatGPT desktop for Windows",
+      "command": "Download-CodexDesktop.cmd",
+      "version": "current",
+      "files": [
+        {
+          "filename": "ChatGPT-x64.msix",
+          "url": "https://persistent.oaistatic.com/codex-app-prod/ChatGPT-x64.msix",
+          "verification": "https-only"
+        },
+        {
+          "filename": "ChatGPT-License.xml",
+          "url": "https://persistent.oaistatic.com/codex-app-prod/ChatGPT-License.xml",
+          "verification": "https-only"
+        }
+      ],
+      "sources": [
+        "https://learn.chatgpt.com/docs/enterprise/windows-deployment"
+      ]
+    },
+    {
+      "id": "claude_desktop",
+      "name": "Claude Desktop",
+      "command": "Download-ClaudeDesktop.cmd",
+      "version": "5.11492.0",
+      "files": [
+        {
+          "filename": "ClaudeSetup.exe",
+          "url": "https://downloads.claude.ai/releases/win32/x64/5.11492.0/ClaudeSetup-ce4f8dd2e25346b37909530556abd6e2e7b00206.exe",
+          "verification": "https-only"
+        }
+      ],
+      "sources": [
+        "https://claude.com/download",
+        "https://support.claude.com/en/articles/12622703-deploy-claude-desktop-for-windows",
+        "https://claude.ai/api/desktop/win32/x64/setup/latest"
+      ]
+    },
+    {
+      "id": "go",
+      "name": "Go",
+      "command": "Download-Go.cmd",
+      "version": "1.27.4",
+      "files": [
+        {
+          "filename": "go1.27.4.windows-amd64.msi",
+          "url": "https://go.dev/dl/go1.27.4.windows-amd64.msi",
+          "sha256": "ae9e383a027ac83c227efd0be3173bf98bccfa5d966a206dff7998f4a3d8449c"
+        }
+      ],
+      "sources": [
+        "https://go.dev/dl/?mode=json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+# Keep only the source files listed in manifest.json.
+/*
+!/.gitignore
+!/build_downloaders.py
+!/catalog.json
+!/Download-Chrome.cmd
+!/Download-ClaudeCode.cmd
+!/Download-ClaudeDesktop.cmd
+!/Download-CodexCLI.cmd
+!/Download-CodexDesktop.cmd
+!/Download-Git.cmd
+!/Download-Go.cmd
+!/Download-Node.cmd
+!/Download-NotepadPlusPlus.cmd
+!/Download-Python.cmd
+!/Download-VSCode.cmd
+!/downloader.ps1
+!/Install-AzureCLI.cmd
+!/Install-Chrome.cmd
+!/Install-GitHubCLI.cmd
+!/manifest.json

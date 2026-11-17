@@ -13,3 +13,5 @@ __pycache__/
 .venv/
 **/.codex/auth.json
 **/.claude/settings.local.json
+# Machine-specific or protection-reducing scripts kept local only (his word, 17 Nov).
+/dangerous/

@@ -10,7 +10,7 @@ Double-click as the intended ordinary user, not an administrator, and enter an e
 
 This deliberately updates USER PATH only. It reads machine PATH for deduplication and shows machine changes as none. It never promotes user-writable/npm/shim folders into system PATH and never requests elevation. Elevated sessions are refused; another account would mean another user PATH, so run as the intended account. Machine-wide PATH editing is not implemented.
 
-Only explicitly listed command names are considered. claude, codex and gh first use bounded Windows command resolution, then a few exact expected executable locations: user .local/bin and npm for Claude; user npm, .local/bin and .cargo/bin for Codex; Program Files/GitHub CLI and LocalAppData/Programs/GitHub CLI for gh. Multiple known installations are reported as unresolved rather than guessed. Additional explicitly listed command names use command resolution only, with no guessed locations. Tools are never executed, installed or recursively searched.
+Only explicitly listed command names are considered. claude, codex and gh first use bounded Windows command resolution, then a few exact expected executable locations: user .local/bin and npm for Claude; user npm, the Node.js zip folder (%LOCALAPPDATA%/Programs/nodejs, npm's global prefix there), .local/bin and .cargo/bin for Codex; Program Files/GitHub CLI and LocalAppData/Programs/GitHub CLI for gh. Multiple known installations are reported as unresolved rather than guessed. Additional explicitly listed command names use command resolution only, with no guessed locations. Tools are never executed, installed or recursively searched.
 
 The proposal shows resolved executables, user additions and all unresolved names before writing. All additions are deduplicated against the persisted user/machine PATH and each other, case-insensitively with normalized slashes, balanced quotes and expandable variables for comparison only. Existing entries, duplicates, order, raw variable text and registry type are preserved. Only genuinely missing directory strings are appended. No setx, truncation or stored expansion. Alias/junction equivalence is not guessed.
 
@@ -22,4 +22,6 @@ Existing processes are not changed or broadcast to. Sign out and back in, then o
 
 0: complete, no-op, preview or cancelled. 2: invalid input/rights/write/verification failure. 3: unresolved tools, including an explicitly reported partial addition. PowerShell launch failures may use another nonzero status. Windows policy is not bypassed. Requires Windows PowerShell 5.1.
 
-Checked with inert planner/control-flow fixtures and non-mutating help/invalid argument entry points only. No persistent PATH changes or VM execution were tested.
+An unquoted `-Tools claude,codex,gh` works: cmd splits it at the commas, and the command joins the names again up to the next switch. Appending to a PATH that already ends in `;` adds no empty entry.
+
+Checked with inert planner/control-flow fixtures and non-mutating help/invalid argument entry points. On one Windows 11 laptop (Claude native, Codex from npm with a Node.js zip): unquoted and quoted lists, preview, and one real apply that re-added two removed folders, verified by read-back and a fresh-PATH resolve, after which the original user PATH was restored exactly. No VM execution was tested.

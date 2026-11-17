@@ -84,6 +84,7 @@ Menu animations also uses [recovery/Simple.ps1](recovery/Simple.ps1); keep this 
 1. [Open-ChromeDownload.cmd](software/Open-ChromeDownload.cmd)
 1. [Open-EdgeUninstallSettings.cmd](software/Open-EdgeUninstallSettings.cmd)
 1. [Update-CliPath.cmd](software/Update-CliPath.cmd) ([notes](software/Update-CliPath.md))
+1. [Add-ClaudeCodexPath.cmd](software/Add-ClaudeCodexPath.cmd) ([notes](software/Add-ClaudeCodexPath.md)); keep Update-CliPath.cmd beside it
 
 ## Read-only diagnostics
 

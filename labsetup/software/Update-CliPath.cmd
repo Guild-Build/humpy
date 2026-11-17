@@ -19,7 +19,14 @@ set "CLI_PATH_TOOLS=%~2"
 if "%CLI_PATH_TOOLS:~0,1%"=="-" goto invalid
 shift
 shift
-goto parse
+:tools_more
+rem cmd splits an unquoted claude,codex into separate arguments; rejoin them until the next switch.
+if "%~1"=="" goto parse
+set "CLI_PATH_NEXT=%~1"
+if "%CLI_PATH_NEXT:~0,1%"=="-" goto parse
+set "CLI_PATH_TOOLS=%CLI_PATH_TOOLS%,%~1"
+shift
+goto tools_more
 :invalid
 echo ERROR: Use -Tools claude,codex,gh, -Preview, -NoPause or -Help. Nothing changed.
 exit /b 2
@@ -72,7 +79,7 @@ function Resolve-Cli($Name) {
     $candidates=@()
     switch ($Name) {
         'claude' { $candidates=@("$env:USERPROFILE\.local\bin\claude.exe","$env:APPDATA\npm\claude.cmd") }
-        'codex' { $candidates=@("$env:APPDATA\npm\codex.cmd","$env:USERPROFILE\.local\bin\codex.exe","$env:USERPROFILE\.cargo\bin\codex.exe") }
+        'codex' { $candidates=@("$env:APPDATA\npm\codex.cmd","$env:LOCALAPPDATA\Programs\nodejs\codex.cmd","$env:USERPROFILE\.local\bin\codex.exe","$env:USERPROFILE\.cargo\bin\codex.exe") }
         'gh' { $candidates=@("$env:ProgramFiles\GitHub CLI\gh.exe","$env:LOCALAPPDATA\Programs\GitHub CLI\gh.exe") }
     }
     $present=@($candidates | Where-Object { Test-Path -LiteralPath $_ -PathType Leaf })
@@ -100,7 +107,7 @@ function Get-Plan($Names,$User,$Machine) {
         } catch { $missing+="$name : $($_.Exception.Message)" }
     }
     $next=$User.Raw
-    if ($add.Count) { if ($next.Length) { $next+=';' }; $next+=($add -join ';') }
+    if ($add.Count) { if ($next.Length -and -not $next.EndsWith(';')) { $next+=';' }; $next+=($add -join ';') }
     if ($next.Length -gt 32766) { throw 'Proposed user PATH is too long; nothing changed.' }
     [pscustomobject]@{Add=$add;Resolved=$resolved;Missing=$missing;Next=$next}
 }
